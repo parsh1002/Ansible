@@ -8,7 +8,7 @@ maven 'Maven'
 stages{
 stage('Checkout'){
 steps{
-git branch : 'main', url : 'https://www.github.com/parsh1002/Anisble.git'
+git branch : 'main', url : 'https://www.github.com/parsh1002/Ansible.git'
 }
 }
 stage('Build'){
