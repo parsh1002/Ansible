@@ -1,0 +1,15 @@
+- name: Deploy to Tomcat
+  hosts: web
+  become: yes
+  tasks: 
+  - name: copy WAR file to Tomcat
+    copy:
+      src: "/home/parshva/final/Ansible/target/MavenAnsibleWebApp1.war"
+      dest: "/opt/tomcat/webapps/MavenAnsibleWebApp1.war"
+      remote_src: no
+  - name: Restart Tomcat
+    systemd:
+      name: tomcat
+      state: restarted
+	   
+		
